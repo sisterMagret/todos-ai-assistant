@@ -1,6 +1,6 @@
 from pydantic import BaseModel, ConfigDict
 
-    
+
 class TodoResponse(BaseModel):
     id: int
     title: str
@@ -8,4 +8,3 @@ class TodoResponse(BaseModel):
     completed: bool
 
     model_config = ConfigDict(from_attributes=True)
-

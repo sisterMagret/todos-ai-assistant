@@ -3,11 +3,9 @@ import time
 
 import requests
 
-
 from app.core.config import settings
 
 logger = logging.getLogger("vapi")
-
 
 
 class VapiHandler:
@@ -26,10 +24,9 @@ class VapiHandler:
             "Authorization": f"Bearer {self.secret_key}",
         }
 
-
     async def get_call_details(self, call_id: str) -> dict:
         url = f"https://api.vapi.ai.call/{call_id}"
-        
+
         counter = 1
         status = True
         context = {"status": False}
@@ -45,13 +42,11 @@ class VapiHandler:
                     "status": result["status"],
                     "startedAt": result["startedAt"],
                     "endedAt": result["endedAt"],
-                    "analysis": result[ "analysis"],
+                    "analysis": result["analysis"],
                     "transcript": result["transcript"],
                     "assistantId": result["assistantId"],
                 }
-                context.update(
-                    {"data": data, "status": True}
-                )
+                context.update({"data": data, "status": True})
                 break
             if counter == 3:
                 break

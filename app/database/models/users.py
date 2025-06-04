@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
+
 from app.database import Base
 
 
@@ -15,13 +16,11 @@ class User(Base):
         autoincrement=True,
     )
     name = Column(String(255), nullable=False)
-    phone_number = Column(String(255), unique=True, index=True, nullable=False)
+    phone_number = Column(
+        String(255), unique=True, index=True, nullable=False
+    )
     todos = relationship(
         "Todo",
         back_populates="owner",
         cascade="all, delete-orphan",
     )
-
-
-
-

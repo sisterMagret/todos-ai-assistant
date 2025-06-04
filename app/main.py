@@ -1,14 +1,17 @@
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base
 from app.database.session import engine
-from app.routes import users, schedule
+from app.routes import schedule, users
+
 
 def create_tables():
     """Create database tables."""
     Base.metadata.create_all(bind=engine)
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -24,7 +27,7 @@ def get_application():
         description="AI voice assistant backend.",
         version="1.0.0",
         docs_url="/",
-        lifespan=lifespan 
+        lifespan=lifespan,
     )
 
     app.add_middleware(
@@ -39,5 +42,6 @@ def get_application():
     app.include_router(schedule.router)
 
     return app
+
 
 app = get_application()
