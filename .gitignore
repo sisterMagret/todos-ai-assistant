@@ -38,3 +38,5 @@ keep.txt
 *.db
 /config/settings/local.py
 /config/settings/base.py
+
+/htmlcov
