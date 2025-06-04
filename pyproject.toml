@@ -1,0 +1,38 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "ai assistant demo project"
+authors = [
+    {name = "sisterMagret",email = "wistler4u@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+
+dependencies = [
+    "bcrypt>=4.3.0",
+    "black>=25.1.0",
+    "celery[redis]>=5.5.3",
+    "email-validator>=2.2.0",
+    "fastapi>=0.115.12",
+    "fastapi-mail",
+    "flake8>=7.2.0",
+    "isort>=6.0.1",
+    "psycopg2>=2.9.10",
+    "psycopg2-binary>=2.9.10",
+    "pydantic>=2.11.5",
+    "pydantic-settings>=2.9.1",
+    "pylint>=3.3.7",
+    "python-dotenv>=1.1.0",
+    "requests>=2.32.3",
+    "sqlalchemy>=2.0.41",
+    "uvicorn>=0.34.3",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry]
+package-mode = false
