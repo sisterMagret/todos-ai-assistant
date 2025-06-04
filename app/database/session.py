@@ -2,9 +2,9 @@ from typing import Generator
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
-# from sqlalchemy.pool import QueuePool
+from sqlalchemy.pool import QueuePool
 
-# from app.core.config import settings
+from app.core.config import settings
 
 # DATABASE_URL = settings.DATABASE_URL
 
