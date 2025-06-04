@@ -10,6 +10,7 @@ email_validator==2.2.0
 fastapi==0.115.12
 greenlet==3.2.2
 h11==0.16.0
+httpx
 idna==3.10
 iniconfig==2.1.0
 packaging==25.0
