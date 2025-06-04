@@ -7,7 +7,6 @@ load_dotenv()
 
 class Settings(BaseSettings):
     """Application configuration settings."""
-
     # Database
     DB_USER: str = Field(..., description="Database username")
     DB_PASSWORD: str = Field(..., description="Database password")
